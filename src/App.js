@@ -1,121 +1,55 @@
 import React from "react";
 import "./App.css";
-import logo from "./images/star.png";
+import Navigation from './components/Navigation';
 import EhnanceSVG from "./images/undraw_Updated_re_u4yh.svg";
+import UsersIcon from "./images/users-icon.png";
+import BoxIcon from "./images/box-icon.png";
 
 import Areachart from "./components/charts/AreaChart";
+import BarChart from "./components/charts/BarChart";
+
+import WorldMapChart from "./components/charts/WorldMapChart";
+
+import DatepickerInput from './components/DatepickerInput';
+
 
 function App() {
   return (
     <div>
       <div className="left-side-menu bg-dark-color">
-        <div className="slimscroll-menu">
-          <div className="card-box widget-user">
-            <div className="user-box text-center">
-              <img
-                src={logo}
-                className="rounded-circle img-thumbnail avatar-md"
-              />
-
-              <p className="text-muted pt-2">Admin Head</p>
-            </div>
-
-            <div id="sidebar-menu">
-              <ul className="metismenu" id="side-menu">
-                <li className="menu-title">Navigation</li>
-
-                <li>
-                  <a href="javascript: void(0);">
-                    <i className="mdi3 mdi-view-dashboard"></i>
-                    <span> Dashboard </span>
-                    <span className="menu-arrow"></span>
-                  </a>
-                  <ul className="nav-second-level" aria-expanded="false">
-                    <li>
-                      <a href="#">Analytics</a>
-                    </li>
-                    <li>
-                      <a href="#">CRM</a>
-                    </li>
-                    <li>
-                      <a href="#">Ecommerce</a>
-                    </li>
-                    <li>
-                      <a href="#">Projects</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="menu-title">Apps</li>
-                <li>
-                  <a href="calendar.html">
-                    <i className="mdi mdi-calendar"></i>
-                    <span> Calendar </span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <i className="mdi mdi-forum"></i>
-                    <span> Chat </span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="inbox.html">
-                    <i className="mdi mdi-email"></i>
-                    <span> Ecommerce </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="inbox.html">
-                    <i className="mdi mdi-email"></i>
-                    <span> Mail </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="inbox.html">
-                    <i className="mdi mdi-email"></i>
-                    <span> Projects </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="inbox.html">
-                    <i className="mdi mdi-email"></i>
-                    <span> Social Feeds </span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="inbox.html">
-                    <i className="mdi mdi-email"></i>
-                    <span> Tasks </span>
-                  </a>
-                </li>
-
-                <li className="menu-title">Custom</li>
-
-                <li>
-                  <a href="ui-typography.html">
-                    <i className="mdi mdi-format-font"></i>
-                    <span> Pages </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="clearfix"></div>
-          </div>
-        </div>
+        <Navigation />
       </div>
 
       <div className="content-page">
         <div className="content">
           <div className="container-fluid">
+            <div className="col-12 pt-4">
+              <div className="row">
+                <div className="col-lg-2 text-left font-weight-bold pt-1">
+                  Anaylicts
+
+                  </div>
+                <div className="col-lg-8 d-flex justify-content-center">
+                  <div className="col-6 text-center ml-0 mr-0">
+                    <form className="app-search">
+                      <div class="input-group">
+                        <input type="text" className="form-control" placeholder="Search..." />
+                        <div className="input-group-append">
+                          <button class="btn" type="submit"> <i className="fe-search"></i> </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div className="col-lg-2 text-right">
+                  <DatepickerInput />
+                </div>
+              </div>
+            </div>
             <div className="row">
-              <div className="col-xl-4 col-md-6 pt-3">
+              <div className="col-xl-4 col-md-6">
                 <div className="card-box py-2">
-                  <div className="header-title mt-0 pt-0 mb-0 text-uppercase">
+                  <div className="header-title-text mt-0 pt-0 mb-0 text-uppercase">
                     Active Users
                   </div>
                   <div className="row">
@@ -124,7 +58,8 @@ function App() {
                     </div>
                     <div className="col-6 text-right">
                       <h3 className="text-grey">
-                        <i className="fas fa-users"></i>
+                        <img src={UsersIcon} />
+
                       </h3>
                     </div>
                   </div>
@@ -140,7 +75,7 @@ function App() {
                   </div>
                 </div>
                 <div className="card-box py-2">
-                  <div className="header-title mt-0 pt-0 mb-0 text-uppercase">
+                  <div className="header-title-text mt-0 pt-0 mb-0 text-uppercase">
                     Views Per Minuet
                   </div>
 
@@ -151,7 +86,7 @@ function App() {
 
                     <div className="col-6 text-right">
                       <h3 className="text-grey">
-                        <i className="fas fa-box"></i>
+                        <img src={BoxIcon} />
                       </h3>
                     </div>
                   </div>
@@ -167,7 +102,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <div className="card-box py-2">
+                <div className="card-box py-2  bg-enhance">
                   <div className="row">
                     <div className="col-6">
                       <div className="text-grey font-weight-normal">
@@ -189,21 +124,18 @@ function App() {
                 </div>
               </div>
 
-              <div className="col-xl-8 col-md-6 pt-3">
+              <div className="col-xl-8 col-md-6">
                 <Areachart />
               </div>
             </div>
 
-            <div className="row">
+            <div className="row pt-4">
               <div className="col-xl-12">
                 <div className="card-box">
+                  <h4 className="header-title mt-0">Seasons By Country</h4>
                   <div className="row">
-                    <div className="col-6">
-                      <h4 className="header-title mt-0">Statistics</h4>
-                    </div>
-                    <div className="col-6">
-                      <h4 className="header-title mt-0">Statistics</h4>
-                    </div>
+                    <WorldMapChart />
+                    <BarChart />
                   </div>
                 </div>
               </div>

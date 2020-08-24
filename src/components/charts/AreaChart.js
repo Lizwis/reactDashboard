@@ -9,9 +9,18 @@ class AreaChart extends Component {
       options: {
         chart: {
           id: "Seasons-Overview",
-          //   background: "#13af85",
+          //   background: "#16b164",
         },
-        colors: ["#13af85"],
+        dataLabels: {
+          enabled: false,
+
+        },
+        grid: {
+          show: false,
+
+        },
+
+        colors: ["#16b164"],
         xaxis: {
           name: "Seasons",
           categories: [
@@ -31,12 +40,29 @@ class AreaChart extends Component {
             "14 Aug",
             "15 Aug",
           ],
+
           labels: {
             style: {
               colors: "#7f8283",
             },
           },
         },
+
+        yaxis: {
+
+          labels: {
+
+            style: {
+              colors: '#7f8283',
+              fontSize: '12px',
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+              cssClass: 'apexcharts-yaxis-label',
+            },
+
+          },
+
+        }
       },
       series: [
         {
